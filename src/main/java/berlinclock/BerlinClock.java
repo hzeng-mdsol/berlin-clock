@@ -16,5 +16,5 @@ public class BerlinClock {
                             calculator.calculateOneMinuteLamps())
                     .map(lamps -> lamps.map(BerlinLamp::getLamp).collect(Collectors.joining()))
                     .collect(Collectors.joining("\n"));
-}
+    }
 }

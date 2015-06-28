@@ -12,7 +12,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class BerlinTimeCalculatorTest {
-
     @Test
     public void shouldCalculateAllFiveHourLampsAsOff() {
         Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(0, 0, 0)).calculateFiveHourLamps();

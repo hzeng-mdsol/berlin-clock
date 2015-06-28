@@ -6,7 +6,6 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class BerlinTimeCalculator {
-
     private final LocalTime time;
 
     public BerlinTimeCalculator(LocalTime time) {
