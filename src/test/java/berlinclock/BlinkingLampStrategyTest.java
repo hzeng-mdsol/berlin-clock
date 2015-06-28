@@ -4,7 +4,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.time.LocalTime;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -21,17 +20,17 @@ public class BlinkingLampStrategyTest {
     }
 
     @Test
-    public void shouldEncodeEvenSecond() {
+    public void shouldCalculateBlinkingLampWithEvenSecond() {
         verifyBlinkingLamp(LocalTime.of(0, 0, 0), Collections.singletonList(Lamp.YELLOW));
     }
 
     @Test
-    public void shouldEncodeOddSecond() {
+    public void shouldCalculateBlinkingLampWithOddSecond() {
         verifyBlinkingLamp(LocalTime.of(12, 5, 13), Collections.singletonList(Lamp.OFF));
     }
 
     private void verifyBlinkingLamp(LocalTime time, List<Lamp> expectedBlinkingLamp) {
-        List<Lamp> blinkingLamp = strategy.encode(time);
+        List<Lamp> blinkingLamp = strategy.calculate(time);
         assertThat(blinkingLamp, equalTo(expectedBlinkingLamp));
     }
 }

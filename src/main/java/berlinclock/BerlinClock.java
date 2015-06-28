@@ -21,9 +21,9 @@ public class BerlinClock {
     public String getTime(String time) {
         LocalTime localTime = LocalTime.parse(time, DateTimeFormatter.ofPattern("HH:mm:ss"));
 
-        return printLamps(blinkingLampStrategy.encode(localTime)) +
-                printLamps(fiveHourLampsStrategy.encode(localTime)) +
-                printLamps(oneHourLampsStrategy.encode(localTime)) +
+        return printLamps(blinkingLampStrategy.calculate(localTime)) +
+                printLamps(fiveHourLampsStrategy.calculate(localTime)) +
+                printLamps(oneHourLampsStrategy.calculate(localTime)) +
                 printLamps(Arrays.asList(Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF)) +
                 printLamps(Arrays.asList(Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF));
     }

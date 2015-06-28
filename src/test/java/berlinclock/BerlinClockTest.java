@@ -50,6 +50,11 @@ public class BerlinClockTest {
         verifyBerlinTime("14:00:00", "YRROORRRROOOOOOOOOOOOOOO");
     }
 
+    @Test
+    public void shouldPrintBerlinTimeForMidday() {
+        verifyBerlinTime("12:00:00", "YRROORROOOOOOOOOOOOOOOOO");
+    }
+
     private void verifyBerlinTime(String time, String expectedTime) {
         String berlinClockTime = berlinClock.getTime(time);
         assertThat(berlinClockTime, equalTo(expectedTime));

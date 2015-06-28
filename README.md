@@ -64,11 +64,11 @@ Output
 
 ```
 Input
-    24:00:00
+    12:00:00
 Output
     Y
-    RRRR
-    RRRR
+    RROO
+    RROO
     OOOOOOOOOOO
     OOOO
 ```
