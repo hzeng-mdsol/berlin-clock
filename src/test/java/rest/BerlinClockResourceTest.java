@@ -17,14 +17,14 @@ public class BerlinClockResourceTest {
 
     @Test
     public void testGetBerlinTime() {
-        String timeParam = "18:03:01";
+        String time = "18:03:01";
         String berlinTime = "O\nRRRO\nRRRO\nOOOOOOOOOOO\nYYYO";
 
         BerlinClock berlinClock = mock(BerlinClock.class);
-        when(berlinClock.getTime(timeParam)).thenReturn(berlinTime);
+        when(berlinClock.getTime(time)).thenReturn(berlinTime);
 
         assertThat(resources.client().target("/berlin-clock")
-                                     .queryParam("time", timeParam)
+                                     .queryParam("time", time)
                                      .request()
                                      .get(String.class))
                 .isEqualTo(berlinTime);
