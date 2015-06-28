@@ -65,7 +65,7 @@ public class BerlinClockTest {
     }
 
     private void verifyBerlinTime(String time, String expectedTime) {
-        String berlinClockTime = berlinClock.getTime(time);
-        assertThat(berlinClockTime, equalTo(expectedTime));
+        String actualTime = berlinClock.getTime(time);
+        assertThat(actualTime, equalTo(expectedTime));
     }
 }
