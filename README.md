@@ -3,7 +3,7 @@ Berlin Clock Project
 
 Create a representation of the Berlin Clock for a given time (HH::mm:ss). [The Berlin Clock](https://en.wikipedia.org/wiki/Mengenlehreuhr) is a rather strange way to show the time.
 
-On the top of the clock there is a yellow lamp that blinks on/off every two seconds. The time is calculated by adding rectangular lamps.
+On the top of the clock there is a yellow circular lamp that blinks on/off every two seconds. The time is calculated by adding rectangular lamps in four rows.
 
 Indicating hours in a day
 --------------------------
@@ -18,7 +18,7 @@ So if two lamps of the first row and three of the second row are switched on tha
 Indicating minutes in a day
 ---------------------------
 
-* The two rows of lamps at the bottom count the minutes.
+* The bottom two rows of lamps count the minutes.
 * The first of these rows has 11 lamps, the second 4.
 * In the first row every lamp represents 5 minutes.
 * In this first row the 3rd, 6th and 9th lamp are red and indicate the first quarter, half and last quarter of an hour. The other lamps are yellow.
