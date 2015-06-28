@@ -33,8 +33,8 @@ public class BerlinTimeCalculator {
         return calculateLampRow(time.getMinute() / 5, 11, index -> index % 3 == 0 ? Lamp.RED : Lamp.YELLOW, index -> Lamp.OFF);
     }
 
-    private Stream<Lamp> calculateLampRow(int index, int lamps, Function<Integer, Lamp> onLamps, Function<Integer, Lamp> offLamps) {
-        return Stream.concat(IntStream.rangeClosed(1, index).boxed().map(onLamps),
-                                IntStream.range(index, lamps).boxed().map(offLamps));
+    private Stream<Lamp> calculateLampRow(int index, int lamps, Function<Integer, Lamp> on, Function<Integer, Lamp> off) {
+        return Stream.concat(IntStream.rangeClosed(1, index).boxed().map(on),
+                                IntStream.range(index, lamps).boxed().map(off));
     }
 }
