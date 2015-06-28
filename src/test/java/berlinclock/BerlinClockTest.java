@@ -23,12 +23,12 @@ public class BerlinClockTest {
 
     @Test
     public void shouldPrintBerlinTimeForMidnight() {
-        verifyBerlinTime("00:00:00", "YOOOOOOOOOOOOOOOOOOOOOOO");
+        verifyBerlinTime("00:00:00", "Y\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
     }
 
     @Test
     public void shouldPrintBerlinTimeForOneSecondAfterMidnight() {
-        verifyBerlinTime("00:00:01", "OOOOOOOOOOOOOOOOOOOOOOOO");
+        verifyBerlinTime("00:00:01", "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO");
     }
 
     @Test
@@ -41,27 +41,27 @@ public class BerlinClockTest {
 
     @Test
     public void shouldPrintBerlinTimeForFiveAM() {
-        verifyBerlinTime("05:00:00", "YROOOOOOOOOOOOOOOOOOOOOO");
+        verifyBerlinTime("05:00:00", "Y\nROOO\nOOOO\nOOOOOOOOOOO\nOOOO");
     }
 
     @Test
     public void shouldPrintBerlinTimeForTwoPM() {
-        verifyBerlinTime("14:00:00", "YRROORRRROOOOOOOOOOOOOOO");
+        verifyBerlinTime("14:00:00", "Y\nRROO\nRRRR\nOOOOOOOOOOO\nOOOO");
     }
 
     @Test
     public void shouldPrintBerlinTimeForMidday() {
-        verifyBerlinTime("12:00:00", "YRROORROOOOOOOOOOOOOOOOO");
+        verifyBerlinTime("12:00:00", "Y\nRROO\nRROO\nOOOOOOOOOOO\nOOOO");
     }
 
     @Test
     public void shouldPrintBerlinTimeForThreeMinutesAfterSixPM() {
-        verifyBerlinTime("18:03:01", "ORRRORRROOOOOOOOOOOOYYYO");
+        verifyBerlinTime("18:03:01", "O\nRRRO\nRRRO\nOOOOOOOOOOO\nYYYO");
     }
 
     @Test
     public void shouldPrintBerlinTimeForAMinuteToMidnight() {
-        verifyBerlinTime("23:59:59", "ORRRRRRROYYRYYRYYRYYYYYY");
+        verifyBerlinTime("23:59:59", "O\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY");
     }
 
     private void verifyBerlinTime(String time, String expectedTime) {

@@ -13,7 +13,7 @@ public class BerlinTimeCalculator {
         this.time = time;
     }
 
-    public  Stream<Lamp> calculateBlinkingLamp() {
+    public Stream<Lamp> calculateBlinkingLamp() {
         return Stream.of(time.getSecond() % 2 == 0 ? Lamp.YELLOW : Lamp.OFF);
     }
 
@@ -35,6 +35,6 @@ public class BerlinTimeCalculator {
 
     private Stream<Lamp> calculateLampRow(int index, int lamps, Function<Integer, Lamp> onLamps, Function<Integer, Lamp> offLamps) {
         return Stream.concat(IntStream.rangeClosed(1, index).boxed().map(onLamps),
-                IntStream.range(index, lamps).boxed().map(offLamps));
+                                IntStream.range(index, lamps).boxed().map(offLamps));
     }
 }

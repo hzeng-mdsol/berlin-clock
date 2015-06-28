@@ -2,7 +2,6 @@ package berlinclock;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -16,8 +15,7 @@ public class BerlinClock {
                             calculator.calculateOneHourLamps(),
                             calculator.calculateFiveMinuteLamps(),
                             calculator.calculateOneMinuteLamps())
-                    .flatMap(Function.identity())
-                    .map(Lamp::getLamp)
-                .collect(Collectors.joining());
+                    .map(lamps -> lamps.map(Lamp::getLamp).collect(Collectors.joining()))
+                    .collect(Collectors.joining("\n"));
 }
 }
