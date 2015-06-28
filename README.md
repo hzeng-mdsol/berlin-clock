@@ -1,7 +1,7 @@
 Berlin Clock Project
 ====================
 
-Create a representation of the Berlin Clock for a given time (hh::mm:ss). [The Berlin Clock](https://en.wikipedia.org/wiki/Mengenlehreuhr) is a rather strange way to show the time.
+Create a representation of the Berlin Clock for a given time (HH::mm:ss). [The Berlin Clock](https://en.wikipedia.org/wiki/Mengenlehreuhr) is a rather strange way to show the time.
 
 On the top of the clock there is a yellow lamp that blinks on/off every two seconds. The time is calculated by adding rectangular lamps.
 

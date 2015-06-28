@@ -6,7 +6,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class HelloWorldTest {
-
     @Test
     public void testHelloWorld() {
         // Given
