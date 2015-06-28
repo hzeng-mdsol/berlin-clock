@@ -15,83 +15,83 @@ public class BerlinTimeCalculatorTest {
 
     @Test
     public void shouldCalculateAllFiveHourLampsAsOff() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(0, 0, 0)).calculateFiveHourLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(0, 0, 0)).calculateFiveHourLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF));
     }
 
     @Test
     public void shouldCalculateAllFiveHourLampsAsRed() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(20, 0, 0)).calculateFiveHourLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.RED, Lamp.RED, Lamp.RED, Lamp.RED));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(20, 0, 0)).calculateFiveHourLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.RED, BerlinLamp.RED, BerlinLamp.RED, BerlinLamp.RED));
     }
 
     @Test
     public void shouldCalculateSomeFiveHourLampsAsRed() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(15, 23, 6)).calculateFiveHourLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.RED, Lamp.RED, Lamp.RED, Lamp.OFF));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(15, 23, 6)).calculateFiveHourLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.RED, BerlinLamp.RED, BerlinLamp.RED, BerlinLamp.OFF));
     }
 
     @Test
     public void shouldCalculateAllOneHourLampsAsOff() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(10, 23, 46)).calculateOneHourLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(10, 23, 46)).calculateOneHourLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF));
     }
 
     @Test
     public void shouldCalculateAllOneHourLampsAsRed() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(14, 13, 47)).calculateOneHourLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.RED, Lamp.RED, Lamp.RED, Lamp.RED));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(14, 13, 47)).calculateOneHourLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.RED, BerlinLamp.RED, BerlinLamp.RED, BerlinLamp.RED));
     }
 
     @Test
     public void shouldCalculateAllOneHourLampsAsRedAbove() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(16, 23, 46)).calculateOneHourLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.RED, Lamp.OFF, Lamp.OFF, Lamp.OFF));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(16, 23, 46)).calculateOneHourLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.RED, BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF));
     }
 
     @Test
     public void shouldCalculateSomeOneHourLampsAsRedBelow() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(13, 12, 9)).calculateOneHourLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.RED, Lamp.RED, Lamp.RED, Lamp.OFF));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(13, 12, 9)).calculateOneHourLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.RED, BerlinLamp.RED, BerlinLamp.RED, BerlinLamp.OFF));
     }
 
     @Test
     public void shouldCalculateAllOneMinuteLampsAsOff() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(10, 20, 46)).calculateOneMinuteLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(10, 20, 46)).calculateOneMinuteLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF));
     }
 
     @Test
     public void shouldCalculateAllOneMinuteLampsAsYellow() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(14, 4, 47)).calculateOneMinuteLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.YELLOW, Lamp.YELLOW, Lamp.YELLOW, Lamp.YELLOW));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(14, 4, 47)).calculateOneMinuteLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.YELLOW, BerlinLamp.YELLOW, BerlinLamp.YELLOW, BerlinLamp.YELLOW));
     }
 
     @Test
     public void shouldCalculateAllOneMinuteLampsAsRedAbove() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(16, 16, 46)).calculateOneMinuteLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.YELLOW, Lamp.OFF, Lamp.OFF, Lamp.OFF));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(16, 16, 46)).calculateOneMinuteLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.YELLOW, BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF));
     }
 
     @Test
     public void shouldCalculateSomeOneMinuteLampsAsRedBelow() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(7, 13, 9)).calculateOneMinuteLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.YELLOW, Lamp.YELLOW, Lamp.YELLOW, Lamp.OFF));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(7, 13, 9)).calculateOneMinuteLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.YELLOW, BerlinLamp.YELLOW, BerlinLamp.YELLOW, BerlinLamp.OFF));
     }
 
     @Test
     public void shouldCalculateFiveMinuteLampsForHalfPast() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(7, 30, 0)).calculateFiveMinuteLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.YELLOW, Lamp.YELLOW, Lamp.RED, Lamp.YELLOW, Lamp.YELLOW, Lamp.RED, Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF, Lamp.OFF));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(7, 30, 0)).calculateFiveMinuteLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.YELLOW, BerlinLamp.YELLOW, BerlinLamp.RED, BerlinLamp.YELLOW, BerlinLamp.YELLOW, BerlinLamp.RED, BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF, BerlinLamp.OFF));
     }
 
     @Test
     public void shouldCalculateAllFiveMinuteLampsAsOn() {
-        Stream<Lamp> actualLamps = new BerlinTimeCalculator(LocalTime.of(23, 59, 0)).calculateFiveMinuteLamps();
-        assertLampsMatch(actualLamps, Arrays.asList(Lamp.YELLOW, Lamp.YELLOW, Lamp.RED, Lamp.YELLOW, Lamp.YELLOW, Lamp.RED, Lamp.YELLOW, Lamp.YELLOW, Lamp.RED, Lamp.YELLOW, Lamp.YELLOW));
+        Stream<BerlinLamp> actualBerlinLamps = new BerlinTimeCalculator(LocalTime.of(23, 59, 0)).calculateFiveMinuteLamps();
+        assertBerlinLampsMatch(actualBerlinLamps, Arrays.asList(BerlinLamp.YELLOW, BerlinLamp.YELLOW, BerlinLamp.RED, BerlinLamp.YELLOW, BerlinLamp.YELLOW, BerlinLamp.RED, BerlinLamp.YELLOW, BerlinLamp.YELLOW, BerlinLamp.RED, BerlinLamp.YELLOW, BerlinLamp.YELLOW));
     }
 
-    private void assertLampsMatch(Stream<Lamp> actualLamps, List<Lamp> expectedLamps) {
-        assertThat(actualLamps.collect(Collectors.toList()), equalTo(expectedLamps));
+    private void assertBerlinLampsMatch(Stream<BerlinLamp> actualBerlinLamps, List<BerlinLamp> expectedBerlinLamps) {
+        assertThat(actualBerlinLamps.collect(Collectors.toList()), equalTo(expectedBerlinLamps));
     }
 }

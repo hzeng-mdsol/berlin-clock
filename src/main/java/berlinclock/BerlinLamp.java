@@ -1,11 +1,11 @@
 package berlinclock;
 
-public enum Lamp {
+public enum BerlinLamp {
     YELLOW("Y"), OFF("O"), RED("R");
 
     private final String lamp;
 
-    Lamp(String lamp) {
+    BerlinLamp(String lamp) {
         this.lamp = lamp;
     }
 
