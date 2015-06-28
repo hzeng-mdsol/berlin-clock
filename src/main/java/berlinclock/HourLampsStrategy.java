@@ -7,7 +7,6 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class HourLampsStrategy implements CalculateTimeStrategy {
-
     private final int unit;
 
     public HourLampsStrategy(int unit) {

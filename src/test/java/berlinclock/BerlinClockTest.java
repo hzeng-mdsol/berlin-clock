@@ -11,7 +11,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class BerlinClockTest {
-
     private static BerlinClock berlinClock;
 
     @Rule
@@ -53,6 +52,11 @@ public class BerlinClockTest {
     @Test
     public void shouldPrintBerlinTimeForMidday() {
         verifyBerlinTime("12:00:00", "YRROORROOOOOOOOOOOOOOOOO");
+    }
+
+    @Test
+    public void shouldPrintBerlinTimeForThreeMinutesAfterSixPM() {
+        verifyBerlinTime("18:03:01", "ORRRORRROOOOOOOOOOOOYYYO");
     }
 
     private void verifyBerlinTime(String time, String expectedTime) {

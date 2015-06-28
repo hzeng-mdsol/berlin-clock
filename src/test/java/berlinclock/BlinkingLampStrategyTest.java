@@ -5,32 +5,22 @@ import org.junit.Test;
 
 import java.time.LocalTime;
 import java.util.Collections;
-import java.util.List;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 public class BlinkingLampStrategyTest {
-
-    private static BlinkingLampStrategy strategy;
+    private static BlinkingLampStrategy blinkingLampStrategy;
 
     @BeforeClass
     public static void  setupStrategy() {
-        strategy = new BlinkingLampStrategy();
+        blinkingLampStrategy = new BlinkingLampStrategy();
     }
 
     @Test
     public void shouldCalculateBlinkingLampWithEvenSecond() {
-        verifyBlinkingLamp(LocalTime.of(0, 0, 0), Collections.singletonList(Lamp.YELLOW));
+        CalculateTimeChecker.check(LocalTime.of(0, 0, 0), blinkingLampStrategy, Collections.singletonList(Lamp.YELLOW));
     }
 
     @Test
     public void shouldCalculateBlinkingLampWithOddSecond() {
-        verifyBlinkingLamp(LocalTime.of(12, 5, 13), Collections.singletonList(Lamp.OFF));
-    }
-
-    private void verifyBlinkingLamp(LocalTime time, List<Lamp> expectedBlinkingLamp) {
-        List<Lamp> blinkingLamp = strategy.calculate(time);
-        assertThat(blinkingLamp, equalTo(expectedBlinkingLamp));
+        CalculateTimeChecker.check(LocalTime.of(12, 5, 13), blinkingLampStrategy, Collections.singletonList(Lamp.OFF));
     }
 }
