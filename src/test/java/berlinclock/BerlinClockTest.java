@@ -59,6 +59,11 @@ public class BerlinClockTest {
         verifyBerlinTime("18:03:01", "ORRRORRROOOOOOOOOOOOYYYO");
     }
 
+    @Test
+    public void shouldPrintBerlinTimeForAMinuteToMidnight() {
+        verifyBerlinTime("23:59:59", "ORRRRRRROYYRYYRYYRYYYYYY");
+    }
+
     private void verifyBerlinTime(String time, String expectedTime) {
         String berlinClockTime = berlinClock.getTime(time);
         assertThat(berlinClockTime, equalTo(expectedTime));
