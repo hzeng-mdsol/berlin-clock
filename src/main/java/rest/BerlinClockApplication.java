@@ -21,5 +21,7 @@ public class BerlinClockApplication extends Application<BerlinClockConfiguration
     @Override
     public void run(BerlinClockConfiguration berlinClockConfiguration, Environment environment) throws Exception {
         //TODO
+    	environment.jersey().register(new HelloWorld());
+    	environment.jersey().register(new UseBerlinClock());
     }
 }
