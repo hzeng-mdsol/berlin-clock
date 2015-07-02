@@ -5,6 +5,8 @@ Create a representation of the Berlin Clock for a given time (HH::mm:ss). [The B
 
 On the top of the clock there is a yellow circular lamp that blinks on/off every two seconds. The time is calculated by adding rectangular lamps in four rows.
 
+test git
+
 Indicating hours in a day
 --------------------------
 
